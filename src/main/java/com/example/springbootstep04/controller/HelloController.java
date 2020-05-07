@@ -28,4 +28,10 @@ public class HelloController {
         //classpath/templates/success.html
         return "success";
     }
+
+
+   /* @RequestMapping({"/","/index.html"})
+    public String index() {
+        return "index";
+    }*/
 }
