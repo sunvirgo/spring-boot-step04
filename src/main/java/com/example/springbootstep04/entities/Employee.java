@@ -2,6 +2,8 @@ package com.example.springbootstep04.entities;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+
 /**
  * 类说明:
  *
@@ -13,17 +15,20 @@ public class Employee {
     private Integer id;
     private String lastName;
     private String email;
+    //1:male 0:female
     private Integer gender;
     private Department department;
+    private Date birth;
     public Employee() {
     }
 
-    public Employee(Integer id, String lastName, String email, Integer gender, Department department) {
+    public Employee(Integer id, String lastName, String email, Integer gender, Department department, Date birth) {
         this.id = id;
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
         this.department = department;
+        this.birth = birth;
     }
 
     public Integer getId() {
@@ -64,5 +69,13 @@ public class Employee {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public Date getBirth() {
+        return birth;
+    }
+
+    public void setBirth(Date birth) {
+        this.birth = birth;
     }
 }
