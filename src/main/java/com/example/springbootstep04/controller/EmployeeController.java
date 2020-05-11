@@ -1,6 +1,8 @@
 package com.example.springbootstep04.controller;
 
+import com.example.springbootstep04.dao.DepartmentDao;
 import com.example.springbootstep04.dao.EmployeeDao;
+import com.example.springbootstep04.entities.Department;
 import com.example.springbootstep04.entities.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,8 @@ import java.util.Collection;
 public class EmployeeController {
     @Autowired
     private EmployeeDao employeeDao;
+    @Autowired
+    private DepartmentDao departmentDao;
     //查询所有员工返回列表页面
     @GetMapping("/emps")
     public String list(Model model){
@@ -28,5 +32,14 @@ public class EmployeeController {
         //ehymeleaf默认会拼串
         //classpath:/templates/**.html
         return "emp/list";
+    }
+
+    //来到员工添加页面
+    @GetMapping("/emp")
+    public String toAddPage(Model model){
+        //查出所有的部门，在页面显示
+        Collection<Department> departments= departmentDao.getDepartments();
+        model.addAttribute("depts",departments);
+        return "emp/add";
     }
 }
