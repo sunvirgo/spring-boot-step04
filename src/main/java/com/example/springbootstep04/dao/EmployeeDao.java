@@ -23,11 +23,11 @@ public class EmployeeDao {
     private DepartmentDao departmentDao;
     static{
         employees = new HashMap<Integer, Employee>();
-        employees.put(1001, new Employee(1001,"E-AA","aa@163.com",1,new Department(1,"A部门"),new Date()));
-        employees.put(1002, new Employee(1002,"E-BB","bb@163.com",0,new Department(2,"B部门"),new Date()));
-        employees.put(1003, new Employee(1003,"E-CC","cc@163.com",0,new Department(3,"C部门"),new Date()));
-        employees.put(1004, new Employee(1004,"E-DD","dd@163.com",0,new Department(4,"D部门"),new Date()));
-        employees.put(1005, new Employee(1005,"E-EE","ee@163.com",1,new Department(5,"E部门"),new Date()));
+        employees.put(1001, new Employee(1001,"zhangsan","aa@163.com",1,new Department(1,"A部门"),new Date()));
+        employees.put(1002, new Employee(1002,"lisi","bb@163.com",0,new Department(2,"B部门"),new Date()));
+        employees.put(1003, new Employee(1003,"zhaoliu","cc@163.com",0,new Department(3,"C部门"),new Date()));
+        employees.put(1004, new Employee(1004,"lijiaqi","dd@163.com",0,new Department(4,"D部门"),new Date()));
+        employees.put(1005, new Employee(1005,"zhaosichun","ee@163.com",1,new Department(5,"E部门"),new Date()));
     }
     private static Integer initId=1006;
     /**

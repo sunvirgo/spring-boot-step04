@@ -1,5 +1,6 @@
 package com.example.springbootstep04.entities;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -18,6 +19,7 @@ public class Employee {
     //1:male 0:female
     private Integer gender;
     private Department department;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birth;
     public Employee() {
     }
@@ -77,5 +79,17 @@ public class Employee {
 
     public void setBirth(Date birth) {
         this.birth = birth;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", gender=" + gender +
+                ", department=" + department +
+                ", birth=" + birth +
+                '}';
     }
 }
