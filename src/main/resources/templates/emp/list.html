@@ -77,18 +77,31 @@
                         <td th:text="${#dates.format(emp.birth,'yyyy-MM-dd HH:mm')}"></td>
                         <td>
                             <a class="btn btn-sm btn-primary" th:href="@{/emp/}+${emp.id}">编辑</a>
-                            <button class="btn btn-sm btn-danger">删除</button>
+                            <button th:attr="del_uri=@{/emp/}+${emp.id}" class="btn btn-sm btn-danger deleteBtn">删除</button>
                         </td>
                     </tr>
                     </tbody>
                 </table>
             </div>
         </main>
+        <form id="deleteEmpForm" method="post">
+            <input type="hidden" value="delete" name="_method"/>
+        </form>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-<script src="/docs/4.4/examples/dashboard/dashboard.js"></script></body>
+<script src="/docs/4.4/examples/dashboard/dashboard.js"></script>
+<script>
+$(".deleteBtn").click(function(){
+    //alert($(this).attr("del_uri"));
+    //删除当前员工的
+    $("#deleteEmpForm").attr("action",$(this).attr("del_uri")).submit();
+    return false;
+});
+</script>
+</body>
 </html>
+
