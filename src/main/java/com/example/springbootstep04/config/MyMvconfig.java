@@ -1,6 +1,12 @@
 package com.example.springbootstep04.config;
 
 import com.example.springbootstep04.component.LoginHandleInterceptor;
+import org.apache.catalina.connector.Connector;
+import org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration;
+import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.server.WebServerFactory;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -19,7 +25,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 //@EnableWebMvc
 //扩展 springMvc
 @Configuration
-public class MyMvconfig extends WebMvcConfigurerAdapter {
+public class MyMvconfig extends WebMvcConfigurerAdapter implements WebServerFactoryCustomizer {
+
+
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //浏览器发送/sunvirgo请求来到success页面
@@ -53,5 +61,23 @@ public class MyMvconfig extends WebMvcConfigurerAdapter {
         };
 
         return webMvcConfigurerAdapter;
+    }
+
+    /**
+     * 方法说明:springboot2.已经改为implements WebServerFactoryCustomizer
+     * @Author: 黄刚
+     * @Date: 2020/5/20 0:46
+     * @Param: [factory]
+     * @Return: void
+     */
+    @Override
+    public void customize(WebServerFactory factory) {
+        ((TomcatServletWebServerFactory)factory).addConnectorCustomizers(new TomcatConnectorCustomizer() {
+            //定制嵌入式servlet容器相关规则
+            @Override
+            public void customize(Connector connector) {
+                connector.setPort(8088);
+            }
+        });
     }
 }
