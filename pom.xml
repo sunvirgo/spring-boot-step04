@@ -26,6 +26,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <!--<exclusions>
+                <exclusion>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+            </exclusions>-->
         </dependency>
         <!-- 添加热部署 -->
         <dependency>
@@ -46,6 +52,12 @@
             <artifactId>bootstrap</artifactId>
             <version>4.4.1-1</version>
         </dependency>
+        <!-- 引入其他的Servlet容器
+        <dependency>
+            <artifactId>spring-boot-starter-jetty</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
