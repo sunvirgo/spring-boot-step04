@@ -18,7 +18,7 @@ public class MyErrorAttribute extends DefaultErrorAttributes {
      * 方法说明: 给容器中加入我们自己定义的Attribute,返回的map就是页面和json能获取的所有字段
      *@author : 黄刚
      *@date : 2020/5/30 19:14
-     *@param : [webRequest, includeStackTrace]
+     *@para : [webRequest, includeStackTrace]
      *@return : java.util.Map<java.lang.String,java.lang.Object>
      */
     @Override

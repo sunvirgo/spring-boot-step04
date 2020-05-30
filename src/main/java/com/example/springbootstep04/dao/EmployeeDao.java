@@ -13,8 +13,8 @@ import java.util.Map;
 /**
  * 类说明:
  *
- * @Author: 黄刚
- * @Date: 2020/5/10 0:15
+ * @author : 黄刚
+ * @date : 2020/5/10 0:15
  */
 @Repository
 public class EmployeeDao {
@@ -32,10 +32,10 @@ public class EmployeeDao {
     private static Integer initId=1006;
     /**
      * 方法说明:
-     * @Author: 黄刚
-     * @Date: 2020/5/10 0:35
-     * @Param: [employee]
-     * @Return: void
+     * @author : 黄刚
+     * @date : 2020/5/30 20:21
+     * @para : [employee]
+     * @return : void
      */
     public void save(Employee employee){
         if(employee.getId() == null){
@@ -46,31 +46,30 @@ public class EmployeeDao {
     }
     /**
      * 方法说明:查询所有员工
-     * @Author: 黄刚
-     * @Date: 2020/5/10 0:35
-     * @Param: []
-     * @Return: java.util.Collection<com.example.springbootstep04.entities.Employee>
+     * @author : 黄刚
+     * @date : 2020/5/10 0:35
+     * @para : []
+     * @return : java.util.Collection<com.example.springbootstep04.entities.Employee>
      */
     public Collection<Employee> getAll(){
         return employees.values();
     }
     /**
      * 方法说明:
-     * @Author: 黄刚
-     * @Date: 2020/5/10 0:36
-     * @Param: []
-     * @Return: com.example.springbootstep04.entities.Employee
+     * @author : 黄刚
+     * @date : 2020/5/30 20:21
+     * @para : [id]
+     * @return : com.example.springbootstep04.entities.Employee
      */
     public Employee get(Integer id){
         return employees.get(id);
     }
     /**
      * 方法说明:
-     * @Author: 黄刚
-     * @Date: 2020/5/10 0:38
-     * @Param: [id]
-     * @Return: void
-     * @return
+     * @author : 黄刚
+     * @date : 2020/5/30 20:21
+     * @para : [id]
+     * @return : com.example.springbootstep04.entities.Employee
      */
     public Employee delete(Integer id){
         return employees.remove(id);

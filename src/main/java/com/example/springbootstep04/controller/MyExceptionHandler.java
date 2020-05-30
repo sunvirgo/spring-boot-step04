@@ -12,8 +12,8 @@ import java.util.Map;
 /**
  * 类说明:
  *
- * @Author: 黄刚
- * @Date: 2020/5/18 20:44
+ * @author : 黄刚
+ * @date : 2020/5/18 20:44
  */
 @ControllerAdvice
 public class MyExceptionHandler {

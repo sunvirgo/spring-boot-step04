@@ -10,8 +10,8 @@ import java.util.Map;
 /**
  * 类说明:
  *
- * @Author: 黄刚
- * @Date: 2020/5/10 0:18
+ * @author : 黄刚
+ * @date : 2020/5/10 0:18
  */
 @Repository
 public class DepartmentDao {
