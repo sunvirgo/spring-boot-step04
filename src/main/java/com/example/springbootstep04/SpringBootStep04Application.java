@@ -17,10 +17,10 @@ public class SpringBootStep04Application {
 
     @Bean
     public ViewResolver myViewResolver() {
-        return new myViewResolver();
+        return new MyViewResolver();
     }
 
-    public static class myViewResolver implements ViewResolver{
+    public static class MyViewResolver implements ViewResolver{
 
         @Override
         public View resolveViewName(String s, Locale locale) throws Exception {

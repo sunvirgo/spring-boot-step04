@@ -16,8 +16,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * 类说明:
  * 使用WebMvcConfigurerAdapter可以扩展SpringMvc功能
  *
- * @Author: 黄刚
- * @Date: 2020/5/5 22:03
+ * @author : 黄刚
+ * @date : 2020/5/5 22:03
  */
 //全面接管springMvc
 //@EnableWebMvc
@@ -63,10 +63,10 @@ public class MyMvconfig extends WebMvcConfigurerAdapter implements WebServerFact
 
     /**
      * 方法说明:springboot2.已经改为implements WebServerFactoryCustomizer
-     * @Author: 黄刚
-     * @Date: 2020/5/20 0:46
-     * @Param: [factory]
-     * @Return: void
+     * @author : 黄刚
+     * @date : 2020/5/30 11:29
+     * @param : [factory]
+     * @return : void
      */
     @Override
     public void customize(WebServerFactory factory) {
