@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/mybatis?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #schema:
+    #  - classpath:department.sql
+    #springboot2.x需要配置属性
+    #initialization-mode: always
+    type: com.alibaba.druid.pool.DruidDataSource
+    #数据源其他配置
+#    schema:
+#      - classpath:sql/department.sql
+#      - classpath:sql/employee.sql
+#    #springboot2.x需要配置属性
+#    initialization-mode: always
+#    initials: 5
+#    minIdle: 5
+#    maxActive: 20
+#    maxWait: 20
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: select 1 from dual
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#    #配置监控统计拦截的filters,取代哦吼监控界面sql无法统计，'wall'用于防火墙
+#    filters: stat,wall,log4j
+#    maxPoolPreparedStatementPerConnectionSize: 20
+#    useGlobalDataSourceStat: true
+#    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
