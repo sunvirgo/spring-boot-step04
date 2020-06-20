@@ -1,4 +1,4 @@
-HELP.md
+data-jdbc/src/main/java/com/sunvirgo/HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
